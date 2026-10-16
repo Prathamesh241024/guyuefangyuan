@@ -1,0 +1,219 @@
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #090b0c;
+  color: white;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Your supplied four-person image */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(
+      rgba(5, 7, 9, 0.35),
+      rgba(5, 7, 9, 0.55)
+    ),
+    url("assets/background.jpg") center center / cover no-repeat;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 34px 18px;
+}
+
+.profile-card {
+  width: min(650px, 100%);
+  padding: 46px 30px 25px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 30px;
+  background: rgba(30, 34, 36, 0.68);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  box-shadow: 0 16px 55px rgba(0, 0, 0, 0.24);
+}
+
+.avatar {
+  display: block;
+  width: 142px;
+  height: 142px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid rgba(255, 255, 255, 0.32);
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: clamp(38px, 8vw, 56px);
+  font-weight: 400;
+  letter-spacing: 5px;
+}
+
+.bio {
+  max-width: 530px;
+  margin: 0 auto 24px;
+  font-size: clamp(18px, 3.7vw, 27px);
+  line-height: 1.55;
+}
+
+.location {
+  margin: 0 0 30px;
+  font-size: 18px;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.socials a,
+.socials span,
+.socials button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 45px;
+  padding: 12px 15px;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  font: inherit;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.socials a {
+  cursor: pointer;
+}
+
+.inactive {
+  opacity: 0.48;
+}
+
+.nitro {
+  position: absolute;
+  top: -9px;
+  right: -10px;
+  padding: 3px 5px;
+  border-radius: 5px;
+  background: #a88af4;
+  color: #171126;
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.discord-note {
+  margin: 20px 0 0;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+  text-align: left;
+}
+
+.views {
+  font-size: 14px;
+}
+
+.coffee {
+  padding: 12px 17px;
+  border-radius: 24px;
+  background: #f2d56e;
+  color: #201c0d;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+footer {
+  padding-top: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 22px 14px;
+  }
+
+  .profile-card {
+    padding: 34px 18px 21px;
+    border-radius: 25px;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .bio {
+    font-size: 19px;
+  }
+
+  .location {
+    font-size: 15px;
+  }
+
+  .socials {
+    gap: 8px;
+  }
+
+  .socials a,
+  .socials span,
+  .socials button {
+    padding: 11px;
+    font-size: 12px;
+  }
+
+  .card-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 28px;
+  }
+
+  .coffee {
+    width: 100%;
+    text-align: center;
+  }
+}
